@@ -46,7 +46,7 @@ const SECTIONS = [
   { id: "tienda", label: "Descubrí", icon: "⟡" },
 ];
 
-const API_URL = "https://api.anthropic.com/v1/messages";
+const API_URL = "/api/chat";
 const MODEL = "claude-sonnet-4-20250514";
 
 async function callClaude(messages, system = "") {
@@ -56,9 +56,9 @@ async function callClaude(messages, system = "") {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "x-api-key": process.env.REACT_APP_ANTHROPIC_KEY,
-      "anthropic-version": "2023-06-01",
-      "anthropic-dangerous-direct-browser-access": "true"
+      
+      
+      
     },
     body: JSON.stringify(body)
   });
