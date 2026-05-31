@@ -47,7 +47,7 @@ const SECTIONS = [
 ];
 
 const API_URL = "/api/chat";
-const MODEL = "claude-sonnet-4-20250514";
+const MODEL = "claude-sonnet-4-5";
 
 async function callClaude(messages, system = "") {
   const body = { model: MODEL, max_tokens: 1000, messages };
