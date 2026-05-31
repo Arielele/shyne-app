@@ -54,7 +54,12 @@ async function callClaude(messages, system = "") {
   if (system) body.system = system;
   const res = await fetch(API_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": process.env.REACT_APP_ANTHROPIC_KEY,
+      "anthropic-version": "2023-06-01",
+      "anthropic-dangerous-direct-browser-access": "true"
+    },
     body: JSON.stringify(body)
   });
   const data = await res.json();
